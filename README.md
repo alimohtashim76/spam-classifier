@@ -7,10 +7,13 @@ A simple web application built with **Flask** to classify text messages as **Spa
 
 ## Features
 
-- **Interactive Prediction**: Users can send a POST request with a message and get a real-time prediction of whether it is spam or ham.
-- **Model Evaluation**: The model performance can be checked with a classification report and confusion matrix during training.
-- **User-Friendly API**: Simple REST API endpoint `/predict` for integration with front-end or other applications.
-- **Prototype Ready**: Ideal for learning AI model deployment with Flask.
+- REST API to classify messages as **Spam or Ham**
+- TF-IDF based text vectorization
+- Comparison of **Logistic Regression** and **Naive Bayes**
+- Model evaluation using precision, recall, F1-score & confusion matrix
+- Trained models saved and reused with Joblib
+- Tested using **Postman**
+- Clean and modular project structure
 
 ---
 
@@ -18,11 +21,13 @@ A simple web application built with **Flask** to classify text messages as **Spa
 
 The model is trained on the **SMS Spam Collection Dataset**.  
 
-- **Number of Instances**: 5572 messages  
-- **Attributes**: 2 (`label` and `message`)  
-- **Class Distribution**: Spam vs Ham  
-  - Spam: 747  
-  - Ham: 4825  
+- Total Messages: **5,572**
+- Features:
+  - `label` → spam / ham
+  - `message` → SMS text
+- Class Distribution:
+  - Ham: **4,825**
+  - Spam: **747**
 
 **Source**: [SMS Spam Collection Dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset?resource=download)
 
@@ -30,22 +35,51 @@ The model is trained on the **SMS Spam Collection Dataset**.
 
 ## Model
 
-The prediction model is a **Logistic Regression** model from scikit-learn.
+## 1. Logistic Regression (Selected for Deployment)
+- Accuracy: **96.68%**
+- Spam Recall: **75%**
+- Best overall performance
 
-- **Model Training**: Trained on TF-IDF vectorized messages with an 80/20 train-test split.
-- **Evaluation**: Model performance is evaluated using classification report and confusion matrix.
-- **Model Serialization**: Trained model and TF-IDF vectorizer are saved as `spam_model.pkl` and `vectorizer.pkl` for use in the Flask API.
+### 2. Multinomial Naive Bayes
+- Accuracy: **95.42%**
+- Spam Recall: **66%**
+
+Logistic Regression performed better and is used in the Flask API.
+
+---
+
+## Results & Evaluation
+
+### Logistic Regression Confusion Matrix
+- True Ham: **965**
+- False Spam: **0**
+- False Ham: **37**
+- True Spam: **113**
+
+### Naive Bayes Confusion Matrix
+- True Ham: **965**
+- False Spam: **0**
+- False Ham: **51**
+- True Spam: **99**
+
+Evaluation Metrics Used:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
 
 ---
 
 ## Technologies Used
 
-- **Python**: Core programming language.  
-- **Flask**: For creating and running the web API.  
-- **Pandas**: Data loading and preprocessing.  
-- **scikit-learn**: Logistic Regression and TF-IDF vectorization.  
-- **Joblib**: Saving and loading the trained model.  
-- **Postman**: For testing API endpoints.
+- **Python** – Core programming language
+- **Pandas** – Data handling and preprocessing
+- **scikit-learn** – ML models & evaluation
+- **TF-IDF Vectorizer** – Feature extraction
+- **Flask** – REST API development
+- **Joblib** – Model persistence
+- **Postman** – API testing
 
 ---
 
@@ -71,7 +105,10 @@ cd spam-classifier
 ### Train the model
 
 `python train.py`
-- This will train the model, evaluate it, and save the `.pkl` files in the model/ folder.
+This will:
+  -Train Logistic Regression & Naive Bayes models
+  -Print evaluation metrics
+  -Save trained model and vectorizer to the model/ folder
 
 ### Run the Flask API
 

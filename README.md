@@ -64,7 +64,7 @@ cd spam-classifier
 
 ### 3. Activate the virtual environment:
 
-`venv\Scripts\activate
+venv\Scripts\activate
 
 ## Usage
 
@@ -75,21 +75,23 @@ cd spam-classifier
 
 ### Run the Flask API
 
-`python app.py
+`python app.py`
 
 - The server will start at http://127.0.0.1:5000/
 
 - Use Postman or Python requests to send a POST request to /predict with JSON body:
-```{
-     "message": "Congratulations! You have won a free ticket."
-   }
+```json
+{
+ "message": "Congratulations! You have won a free ticket."
+}
 ```
 
 - Example response:
-```{
-     "prediction": "spam",
-     "confidence": 0.98
-  }
+```json
+{
+ "prediction": "spam",
+ "confidence": 0.98
+}
 ```
 
 

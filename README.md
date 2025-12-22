@@ -69,21 +69,21 @@ The prediction model is a **Logistic Regression** model from scikit-learn.
 
 ### Train the model
 
-python train.py
-This will train the model, evaluate it, and save the .pkl files in the model/ folder.
+python train.py .
+- This will train the model, evaluate it, and save the .pkl files in the model/ folder.
 
 ### Run the Flask API
 
-python app.py
+python app.py .
 
-The server will start at http://127.0.0.1:5000/
+- The server will start at http://127.0.0.1:5000/
 
-Use Postman or Python requests to send a POST request to /predict with JSON body:
+- Use Postman or Python requests to send a POST request to /predict with JSON body:
 {
   "message": "Congratulations! You have won a free ticket."
 }
 
-Example response:
+- Example response:
 {
   "prediction": "spam",
   "confidence": 0.98

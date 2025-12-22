@@ -52,10 +52,43 @@ The prediction model is a **Logistic Regression** model from scikit-learn.
 ## Installation and Setup
 
 ### 1. Clone the repository
-```bash
-git clone https://github.com/alimohtashim76/spam-classifier.git
-cd spam-classifier
+
+    **```bash**
+    git clone https://github.com/alimohtashim76/spam-classifier.git
+    cd spam-classifier
 
 ### 2. Create a virtual environment
-python -m venv venv
+
+    **python -m venv venv**
+
+### 3. Activate the virtual environment:
+
+    **venv\Scripts\activate**
+
+## Usage
+
+### Train the model
+
+python train.py
+This will train the model, evaluate it, and save the .pkl files in the model/ folder.
+
+### Run the Flask API
+
+python app.py
+
+The server will start at http://127.0.0.1:5000/
+
+Use Postman or Python requests to send a POST request to /predict with JSON body:
+{
+  "message": "Congratulations! You have won a free ticket."
+}
+
+Example response:
+{
+  "prediction": "spam",
+  "confidence": 0.98
+}
+
+
+
 

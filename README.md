@@ -71,7 +71,7 @@ cd spam-classifier
 ### Train the model
 
 `python train.py`
-- This will train the model, evaluate it, and save the .pkl files in the model/ folder.
+- This will train the model, evaluate it, and save the `.pkl` files in the model/ folder.
 
 ### Run the Flask API
 
@@ -79,7 +79,7 @@ cd spam-classifier
 
 - The server will start at http://127.0.0.1:5000/
 
-- Use Postman or Python requests to send a POST request to /predict with JSON body:
+- Use **Postman** or **Python requests** to send a **POST** request to /predict with JSON body:
 ```json
 {
  "message": "Congratulations! You have won a free ticket."

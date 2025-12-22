@@ -79,7 +79,7 @@ cd spam-classifier
 
 - The server will start at http://127.0.0.1:5000/
 
-- Use **Postman** or **Python requests** to send a **POST** request to /predict with JSON body:
+- Use **Postman** or **Python requests** to send a **POST** request to `/predict` with JSON body:
 ```json
 {
  "message": "Congratulations! You have won a free ticket."

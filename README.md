@@ -60,17 +60,17 @@ cd spam-classifier
 
 ### 2. Create a virtual environment
 
-`python -m venv venv
+`python -m venv venv`
 
 ### 3. Activate the virtual environment:
 
-venv\Scripts\activate
+`venv\Scripts\activate`
 
 ## Usage
 
 ### Train the model
 
-`python train.py 
+`python train.py`
 - This will train the model, evaluate it, and save the .pkl files in the model/ folder.
 
 ### Run the Flask API

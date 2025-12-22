@@ -1,7 +1,8 @@
 # Spam Classifier
-**Python Flask Pandas scikit-learn Joblib**
+**Python · Flask · Pandas · scikit-learn · TF-IDF · Joblib**
 
-A simple web application built with **Flask** to classify text messages as **Spam** or **Ham (not spam)**. This project uses a **Logistic Regression** model trained on the **SMS Spam Collection Dataset**.
+An end-to-end **AI-powered Spam Classification system** that detects whether a text message is **Spam** or **Ham (Not Spam)**.  
+The project covers the complete machine learning lifecycle — **data preprocessing, model training, evaluation, and API deployment using Flask**.
 
 ---
 
